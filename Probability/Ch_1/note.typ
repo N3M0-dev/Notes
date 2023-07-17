@@ -53,13 +53,16 @@ $
 $
 #pagebreak()
 
-= Probabilistic Models
+= Probabilistic Models 
+
 #align(center)[
 #rect(width: 95%)[#align(left)[
   #heading(level: 3,numbering: none)[Elements of a Probabilistic Model]
   - The sample space $Omega$, the set of all possiable outcomes
   - The probability law, which assigns any event $A$ a non-negative number $P(A)$
-]]]
+]]]#footnote(numbering: "*")[
+Insight of Probability: The term "probability" should come with an event, like the probability of event $A
+$ $P(A)$, which is further a outcome of the probability law and a part of the probabilistic model. And a valid probabilistic model should contain a sample space and a probability law which agree with the probability axioms.]
 
 == Choosing an Appropriate Sample Space
 
@@ -111,7 +114,38 @@ Conditional probability provides us with a way to reason about the outcome of an
 
 In precise terms, the conditional probability is when we know the is with in a given event $B$, we wish to know the probability of the event $A$. We call this #emph()[conditional probability of $A$ given $B$], denoted by $P(A bar B)$
 
-*Defenition*#sub()[#text(style: "italic")[conditional probability]]: $P(A bar B)=P(A sect B)/P(B)$
+*Definition*#sub()[#text(style: "italic")[conditional probability]]: $P(A bar B)=P(A sect B)/P(B)$
+
+== Verification of the Prabability Laws
+
++ Nonnegativity is clear since the original probability is nonnegative.
++ Additivity: 
+$ P(A_1 union A_2 bar B) &= P((A_1 union A_2) sect B)/P(B)\ 
+&= (P(A_1 sect B) + P(A_2 sect B))/P(B)\
+&= P(A_1 bar B)+P(A_2 bar B) $\
++ Normalization: 
+$ P( Omega bar B)=P(Omega sect B)/P(B)=P(B)/P(B)=1 $
+
+== Properties of Conditional Probability
+
+#align(center)[
+#rect(width: 95% )[#align(left)[#pad(y: 5pt)[
+- Conditional probability can be viewed as a normal probability on a new universe $B$.
+- Furthermore, if all outcomes are equally likely, then $P(A bar B)=("num of elements of" A union B)/("num of elements of" B)$
+]]]]
+
+== Using Conditional Probability for Modeling
+
+A restatement of the definition of the conditional probability is $P(A union B)=P(B)P(A bar B)$, which can be used to calculate a non-conditional probability.
+
+#align(center)[
+#rect(width: 95% )[#align(left)[#heading(level: 3,numbering: none)[Multiplication Rule]
+#pad(y: 5pt)[
+By definition, it's easy to get
+$ P(union.big^n_(i=1)A_i)=P(A_1)P(A_2 bar A_3)P(A_3 bar A_1 sect A_2) dots.h P(A_n bar union.big^(n-1)_(i=1)A_i) $
+]]]]
+
+== Total Probability Theorem and Bayes' Rule
 
 
 
