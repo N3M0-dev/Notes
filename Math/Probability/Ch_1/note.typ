@@ -147,6 +147,45 @@ $ P(union.big^n_(i=1)A_i)=P(A_1)P(A_2 bar A_3)P(A_3 bar A_1 sect A_2) dots.h P(A
 
 == Total Probability Theorem and Bayes' Rule
 
+#align(center)[
+#rect(width: 95% )[#align(left)[#heading(level: 3,numbering: none)[Total Probability Theorem]
+#pad(y: 5pt)[
+Let $A_1, A_3, dots, A_n$ be disjoint events that #emph()[form a partition] of the sample space, and assume that $P(A_i)>0$ for all $i$. Then far any event $B$, we have $ P(B)&= P(A_n union B)+dots.h+P(A_n union B)\
+&= sum^n_(i=1) P(A_i)P(B bar A_i) $
+]]]]
+
+#align(center)[
+#rect(width: 95% )[#align(left)[#heading(level: 3,numbering: none)[Bayes' Rule]
+#pad(y: 5pt)[
+Let $A_1, A_2, dots, A_n$ be disjoint events that form a partition of the sample space, and assume that $P(A_i) gt 0$ for all $i$. Then, for any event $B$ such that $B$ that $P(B) gt 0$, we have
+$
+P(A_i bar B) &= (P(A_i)P(B bar A_i))/P(B)\
+&=(P(A_i)P(B bar A_i))/(P(A_1)P(B bar A_1)+dots.h+P(A_n)P(B bar A_n))
+$
+]]]]
+
+The Bayes' Rule reveals the relation between conditional probability of form $P(A bar B)$ and $P(B bar A$), in which the order of conditioning is reversed.
+
+/ e.g. An example in medicine: \ If there is a shade in someone's x-ray, and there are 3 possibilities: \ 1. It's a malignant tumor\ 2. It's a nonmalignant tumor\ 3. Not a tumor\ Calculate the probability of each situation.
+/ Ans: Let $A_1, A_2, A_3$ be the three events, and $B$ be the probability of there being a shade. Assume that we know the probabilities $P(A_i)$ and $P(B bar A_i)$ (these data can be actually found in practise). So we due to Bayes' Rule, we have $ P(A_i bar B)=(P(A_i)P(B bar A_i))/(P(B))=(P(A_i)P(B bar A_i))/(P(A_1)P(A_1 bar B)+P(A_2)P(A_2 bar B)+P(A_3)P(A_3 bar B)) $
+
+As above, the Bayes Rule is often used for inference where we need to infer the "causes" from "effects". The events $A_1, A_2, A_3$ are the causes and the shade event $B$ is the effect by the causes. In a lot of situations, we have already collected the data of the effects, and we want to evaulate the probability of the cause $A_i$ is present, that's when Bayes' Rule come into use.
+
+And just like the example above, the $A_i$ stands for the cause, the $B$ stands for the effect, we give the definition of #emph()[posterior probability] and #emph()[prior probability]:
+/ Posterior probability: $P(A_i bar B)$
+/ Prior probability: $P(A_i)$
+
+/ e.g. The False-Positive Puzzle: \ A test for a certian rare disease is assumed to be 95% correct, and a random person drawn from a cortain population has the probability 0.001 of having the disease. Then, if a person tested positive, what is the probability of the person having the disease?
+/ Ans: Now we know the effect, we want to evaulate the probability of the cause is present -- Apply the Bayes' Rule! Let $A$ be the event the person have the disease, $B$ be the event of tested positive. So we want $P(A bar B)$, and we have $P(A)=0.001, P(B bar A)=0.95$. So $ P(A bar B)=(P(A)P(B bar A))/P(B)= (P(A)P(B bar A))/(P(A)P(B bar A)+P(A^c)P(B bar A^c))=0.0187 $\ Less than 2%!!!
+
+== Independence
+
+*Definition*#sub()[#text(style: "italic")[independence]]: If $P(A sect B)=P(A)P(B)$, then we say that $A$ is #emph()[independent] of $B$.
+
+The equation above is also equivalent to $P(A bar B)=P(A)$.
+
+
+
 
 
 
