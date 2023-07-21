@@ -184,6 +184,39 @@ And just like the example above, the $A_i$ stands for the cause, the $B$ stands 
 
 The equation above is also equivalent to $P(A bar B)=P(A)$.
 
+== Conditional Independence
+
+*Definition*#sub()[#text(style: "italic")[conditional independence]]: If $P(A sect B bar C)=P(A bar C)P(B bar C)$, we say thar events $A$ and $B$ are conditionally independent (given $C$).
+
+#align(center)[
+#rect(width: 95% )[#align(left)[#heading(level: 3,numbering: none)[Summary]
+#pad(y: 5pt)[
+- Two events $A,B$ are independent if $P(A sect B)=P(A)P(B)$. In addition, if $P(B) gt 0$, independence is equivalent to $P(A bar B)=P(A)$
+- If $A,B$ are independent, so are $A$ and $B^c$
+- Two events $A,B$ are conditionally independent if $P(A sect B bar C)=P(A bar C)P(B bar C)$. In addition, if $P(B) gt 0$, independence is equivalent to $P(A bar B sect C)=P(A bar C)$.
+- Independence does not imply conditional independence and vice versa.
+]]]]
+
+#align(center)[
+#rect(width: 95% )[#align(left)[#heading(level: 3,numbering: none)[Independence of a collection of events]
+#pad(y: 5pt)[
+Events $A_1,A_2,dots,A_n$ are independent if $ P(sect.big_(i in S)A_i)=product_(i in S)P(A_i), "for every subset" S "of" {1,2,dots,n} $
+]]]]
+
+
+== Reliability
+
+/ e.g. Network connectivity: \ The following graph is a network with the prabability of link of the connected nodes is up. Evaulate the probability of the successful connection from $A$ to $B$.(Classic problem ,omitting ans)
+
+
+#figure( 
+  grid(
+    columns: 2,
+    image("./net.svg"),
+    image("./series_parallel.svg")
+  ))
+
+== Independent Trials and the Binomial Probabilities
 
 
 
