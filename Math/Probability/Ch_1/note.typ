@@ -1,34 +1,47 @@
-#let authors=("Nemo",)
-#let title="Sample Space and Probability"
-#let date="2023.7.10-"
-#set document(author: authors, title: title)
+#import "@local/note_template:0.0.1": *
+
 #set page(numbering: "1", number-align: center)
 #set heading(numbering: "1.1")
-
-// Title row.
-#align(center)[
-  #block(text(weight: 700, 1.75em, title))
-  #v(1em, weak: true)
-  #date
-]
-
-// Author information.
-#pad(
-  top: 0.5em,
-  bottom: 0.5em,
-  x: 2em,
-  grid(
-    columns: (1fr,) * calc.min(3, authors.len()),
-    gutter: 1em,
-    ..authors.map(author => align(center, strong(author))),
-  ),
-)
-
-// Main body.
 #set par(justify: true)
 #set text(12pt)
+#set outline(indent: true)
 
-#outline(indent: true)
+#frontmatter(authors: ("Nemo",), title: "Sample Space and Probability", date: "2023.7.10")
+
+#outline()
+#pagebreak()
+
+// #let authors=("Nemo",)
+// #let title="Sample Space and Probability"
+// #let date="2023.7.10-"
+// #set document(author: authors, title: title)
+// #set page(numbering: "1", number-align: center)
+// #set heading(numbering: "1.1")
+//
+// // Title row.
+// #align(center)[
+// #block(text(weight: 700, 1.75em, title))
+// #v(1em, weak: true)
+// #date
+// ]
+//
+// // Author information.
+// #pad(
+//     top: 0.5em,
+//     bottom: 0.5em,
+//     x: 2em,
+//     grid(
+//       columns: (1fr,) * calc.min(3, authors.len()),
+//       gutter: 1em,
+//       ..authors.map(author => align(center, strong(author))),
+//       ),
+//     )
+//
+// // Main body.
+// #set par(justify: true)
+// #set text(12pt)
+//
+// #outline(indent: true)
 
 = Sets (Quick Review)
 
@@ -215,6 +228,8 @@ Events $A_1,A_2,dots,A_n$ are independent if $ P(sect.big_(i in S)A_i)=product_(
     image("./net.svg"),
     image("./series_parallel.svg")
   ))
+
+#pagebreak()
 
 == Independent Trials and the Binomial Probabilities
 
